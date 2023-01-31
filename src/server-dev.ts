@@ -8,9 +8,9 @@ process.nextTick(async () => {
         await start(
             createConfig({
                 db: {
-                    user: 'unleash_user',
-                    password: 'passord',
-                    host: 'localhost',
+                    user: process.env.UNLEASH_DATABASE_USER,
+                    password: process.env.UNLEASH_DATABASE_PASSWORD,
+                    host: process.env.UNLEASH_DATABASE_URL,
                     port: 5432,
                     database: process.env.UNLEASH_DATABASE_NAME || 'unleash',
                     schema: process.env.UNLEASH_DATABASE_SCHEMA,
